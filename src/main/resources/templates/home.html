@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Apni Dukkan</title>
+<link rel="stylesheet" href="/css/home.css">
+<!-- Corrected the style link -->
+</head>
+<body>
+	<!-- Navigation Bar -->
+	<nav>
+		<span>Apni Dukkan</span> <a th:href="@{/dukkan}">Home</a> <a href="#">Orders</a>
+		<a href="#">Login</a>
+	</nav>
+
+	<!-- Store Banner -->
+	<div class="start">
+		<h1>Ashu General Store</h1>
+		<img src="images/dukkan.png" alt="Ashu General Store Logo">
+	</div>
+
+	<!-- Item Categories -->
+	<div class="container">
+		<div class="all-items">
+			<ul>
+				<li><img src="images/BreadMilk.png" alt="Bread and Milk">
+					<span>Bread</span></li>
+
+				<li><img src="images/AttaRice.png" alt="Atta, Rice and Daal">
+					<strong>Atta, Rice & Daal</strong></li>
+
+				<li><img src="images/MasalaOil.png" alt="Oil and Masala">
+					<span>Oil & Masala</span></li>
+
+				<li><img src="images/Washing.png" alt="Cleaning Essentials">
+					<span>Cleaning Essentials</span></li>
+
+				<li><img src="images/Breakfast.png"
+					alt="Breakfast and Instant Food"> <span>Breakfast &
+						Instant Food</span></li>
+
+				<li><img src="images/Sauces.png" alt="Sauces"> <span>Sauces</span>
+				</li>
+
+				<li><img src="images/Namkeen.png" alt="Snacks and Munchies">
+					<span>Snacks & Munchies</span></li>
+
+				<li><img src="images/PersonalCare.png"
+					alt="Personal Care Products"> <span>Personal Care</span></li>
+
+				<li><img src="images/Biscuit.png" alt="Biscuits"> <span>Biscuits</span>
+				</li>
+
+				<li><img src="images/Tee.png"
+					alt="Tea, Coffee and Health Drinks"> <span>Tea, Coffee
+						& Health Drink</span></li>
+			</ul>
+		</div>
+	</div>
+
+	<!-- Footer -->
+	<footer>
+		<span>Copyright &copy; 2024 Apni Dukkan</span>
+	</footer>
+</body>
+</html>
