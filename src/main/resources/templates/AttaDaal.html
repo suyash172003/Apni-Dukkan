@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html xmlns:th="http://www.thymleaf.org">
 <head>
     <meta charset="ISO-8859-1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,36 +15,36 @@
         <a href="#">Login</a>
     </nav>
 
-    <section class="products">
+    <section class="products" th:object=${cart}>
         <div class="category">
             <h2>Atta</h2>
             <div class="product-grid">
                 <div class="product">
                     <img src="images/AttaRice.png" alt="Atta">
-                    <p>Ashirwad Atta</p>
+                    <p class="orderName">Ashirwad Atta</p>
                     <span>5kg</span>
-                    <span>Price: Rs 120</span>
+                    <span class="price">Price: Rs 120</span>
                     <button class="btn">Add</button>
                 </div>
                 <div class="product">
                     <img src="images/AttaRice.png" alt="Atta">
-                    <p>Ashirwad Atta</p>
+                    <p class="orderName">Ashirwad Atta</p>
                     <span>10kg</span>
-                    <span>Price: Rs 220</span>
+                    <span class="price">Price: Rs 220</span>
                     <button class="btn">Add</button>
                 </div>
                 <div class="product">
                     <img src="images/AttaRice.png" alt="Atta">
-                    <p>Fortune Atta</p>
+                    <p class="orderName">Fortune Atta</p>
                     <span>5kg</span>
-                    <span>Price: Rs 100</span>
+                    <span class="price">Price: Rs 100</span>
                     <button class="btn">Add</button>
                 </div>
                 <div class="product">
                     <img src="images/AttaRice.png" alt="Atta">
-                    <p>Fortune Atta</p>
+                    <p class="orderName">Fortune Atta</p>
                     <span>10kg</span>
-                    <span>Price: Rs 190</span>
+                    <span class="price">Price: Rs 190</span>
                     <button class="btn">Add</button>
                 </div>
             </div>
@@ -55,32 +54,49 @@
             <h2>Rice</h2>
             <div class="product-grid">
                 <div class="product">
-                    <img src="images/AttaRice.png" alt="Rice">
-                    <p>Sambha Mansuri</p>
-                    <span>1kg</span>
-                    <span>Price: Rs 40</span>
-                    <button class="btn">Add</button>
+                	<form th:action="@{/orders}"  method="post">
+                		<img src="images/AttaRice.png" alt="Rice">
+                		<p>Sambha Mansuri</p>
+                    	<span>1kg</span>
+                    	<span>Price: Rs 70</span>
+	                    <input type="hidden" name="ordername" value="Sambha Mansuri">
+    					<input type="hidden" name="price" value="70">
+	                    <button class="btn">Add</button>
+                    </form>
+                </div>
+                
+                <div class="product">
+                    <form th:action="@{/orders}"  method="post">
+                		<img src="images/AttaRice.png" alt="Rice">
+                		<p>Basmati Rice</p>
+                    	<span>1kg</span>
+                    	<span>Price: Rs 90</span>
+	                    <input type="hidden" name="ordername" value="Basmati Rice">
+    					<input type="hidden" name="price" value="90">
+	                    <button class="btn">Add</button>
+                    </form>
                 </div>
                 <div class="product">
-                    <img src="images/AttaRice.png" alt="Rice">
-                    <p>Basmati Rice</p>
-                    <span>1kg</span>
-                    <span>Price: Rs 70</span>
-                    <button class="btn">Add</button>
+                    <form th:action="@{/orders}"  method="post">
+                		<img src="images/AttaRice.png" alt="Rice">
+                		<p>Biryani Rice</p>
+                    	<span>1kg</span>
+                    	<span>Price: Rs 120</span>
+	                    <input type="hidden" name="ordername" value="Basmati Rice">
+    					<input type="hidden" name="price" value="90">
+	                    <button class="btn">Add</button>
+                    </form>
                 </div>
                 <div class="product">
-                    <img src="images/AttaRice.png" alt="Rice">
-                    <p>Biryani Rice</p>
-                    <span>1kg</span>
-                    <span>Price: Rs 80</span>
-                    <button class="btn">Add</button>
-                </div>
-                <div class="product">
-                    <img src="images/AttaRice.png" alt="Rice">
-                    <p>Double Kabootar</p>
-                    <span>1kg</span>
-                    <span>Price: Rs 100</span>
-                    <button class="btn">Add</button>
+                    <form th:action="@{/orders}"  method="post">
+                		<img src="images/AttaRice.png" alt="Rice">
+                		<p>Kabootar Rice</p>
+                    	<span>1kg</span>
+                    	<span>Price: Rs 110</span>
+	                    <input type="hidden" name="ordername" value="Kabootar Rice">
+    					<input type="hidden" name="price" value="110">
+	                    <button class="btn">Add</button>
+                    </form>
                 </div>
             </div>
         </div>
@@ -161,10 +177,6 @@
                 </div>
             </div>
         </div>
-        
-        
-
-        <!-- Add similar divs for other categories like Daal, Chana, etc. -->
     </section>
 
     <footer>
