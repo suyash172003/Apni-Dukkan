@@ -11,6 +11,18 @@ public class Register {
 	private String lastName;
 	private long mobileNumber;
 	private String email;
+	private String password;
+	public Register(long id, String firstName, String lastName, long mobileNumber, String email, String password) {
+		super();
+		this.id = id;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.mobileNumber = mobileNumber;
+		this.email = email;
+		this.password = password;
+	}
+	
+	public Register(){}
 	
 	public long getId() {
 		return id;
@@ -42,21 +54,17 @@ public class Register {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	
-	public Register() {}
-	
-	public Register(long id, String firstName, String lastName, long mobileNumber, String email) {
-		super();
-		this.id = id;
-		this.firstName = firstName;
-		this.lastName = lastName;
-		this.mobileNumber = mobileNumber;
-		this.email = email;
+	public String getPassword() {
+		return password;
 	}
-	
+	public void setPassword(String password) {
+		this.password = password;
+	}
 	@Override
 	public String toString() {
 		return "Register [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", mobileNumber="
-				+ mobileNumber + ", email=" + email + "]";
+				+ mobileNumber + ", email=" + email + ", password=" + password + "]";
 	}
+	
+	
 }

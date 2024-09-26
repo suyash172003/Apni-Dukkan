@@ -1,14 +1,43 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymleaf.org">
 <head>
-<meta charset="ISO-8859-1">
-<title>Insert title here</title>
+    <meta charset="ISO-8859-1">
+    <title>Apni Dukkan - Orders</title>
+    <link rel="stylesheet" href="/css/cart.css">
 </head>
 <body>
-	<h1>Apni Dukkan</h1>
-	<h3>Your Orders</h3>
-	<div class="container">
-		
-	</div>
+
+    <header>
+        <h1>Apni Dukkan</h1>
+        <h3>Your Orders</h3>
+    </header>
+
+    <main class="container">
+        <section class="order-summary">
+            <div class="order-header">
+                <p><strong>Order Name</strong></p>
+                <p><strong>Price</strong></p>
+            </div>
+            
+            <!-- Order List -->
+            <div class="order-list" th:each="item : ${cart}">
+                <div class="order-item">
+                    <p class="order-name" th:text="${item.ordername}"></p>
+                    <p class="order-price" th:text="'Rs. ' +${item.price}"></p>
+                </div>
+            </div>
+
+            <!-- Total Sum -->
+            <div class="total">
+                <strong>Total Sum:</strong>
+                <p th:text="'Rs. ' +${totalSum}"></p>
+            </div>
+        </section>
+    </main>
+    <div class="container">
+    	<p>Cancellation Policy</p>
+    	<p>Orders cannot be cancelled once packed for delivery. In case of unexpected delays, a refund will be provided, if applicable.</p>
+    </div>
+    <button type="submit">Payment</button>
 </body>
 </html>

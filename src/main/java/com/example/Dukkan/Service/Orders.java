@@ -1,5 +1,7 @@
 package com.example.Dukkan.Service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,7 +18,7 @@ public class Orders {
 	@Autowired
 	CartRepository cartOrder;
 	
-	@GetMapping("/dukkan")
+	@GetMapping("/home")
 	public String homePage() {
 		return "home";
 	}
@@ -29,8 +31,20 @@ public class Orders {
 	
 	@PostMapping("/orders")
 	public String orderAttaDaal(@ModelAttribute("cart")Cart cart) {
-		System.out.print(cart);
+		if(cart!=null)
 		cartOrder.save(cart);
 		return "redirect:/orders";
+	}
+	
+	@GetMapping("/cart")
+	public String cart(Model model) {
+		List<Cart> temp=cartOrder.findAll();
+		model.addAttribute("cart", temp);
+		int totalSum=0;
+		for(Cart value:temp) {
+			totalSum+=value.getPrice();
+		}
+		model.addAttribute("totalSum",totalSum);
+		return "Cart";
 	}
 }

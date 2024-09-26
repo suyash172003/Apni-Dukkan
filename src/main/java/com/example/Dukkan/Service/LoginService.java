@@ -27,4 +27,9 @@ public class LoginService {
 		return "redirect:/home";
 	}
 	
+	@GetMapping("/logout")
+	public String logoutUser(Model model) {
+		return "redirect:/home";
+	}
+	
 }

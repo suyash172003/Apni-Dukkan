@@ -1,0 +1,83 @@
+/* General styling */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    text-align: center;
+    padding: 20px;
+    background-color: #34495e;
+    color: white;
+}
+
+h1 {
+    margin: 0;
+    font-size: 36px;
+}
+
+h3 {
+    margin: 0;
+    font-weight: normal;
+    padding-top: 10px;
+}
+
+.container {
+    width: 80%;
+    max-width: 1200px;
+    margin: 30px auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Order header */
+.order-header {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #eee;
+    font-size: 18px;
+}
+
+/* Order items */
+.order-list {
+    margin-top: 20px;
+}
+
+.order-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+    transition: background-color 0.3s ease;
+}
+
+.order-item:hover {
+    background-color: #f4f4f4;
+}
+
+.order-name, .order-price {
+    font-size: 18px;
+    color: #2c3e50;
+}
+
+/* Total sum section */
+.total {
+    margin-top: 20px;
+    text-align: right;
+}
+
+.total strong {
+    font-size: 20px;
+}
+
+.total p {
+    font-size: 24px;
+    color: #e74c3c;
+    font-weight: bold;
+    margin: 5px 0;
+}

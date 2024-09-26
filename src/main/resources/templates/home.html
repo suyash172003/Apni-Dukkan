@@ -1,67 +1,91 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymleaf.org">
+<html lang="en">
 <head>
-<meta charset="ISO-8859-1">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Apni Dukkan</title>
-<link rel="stylesheet" href="/css/home.css">
-<!-- Corrected the style link -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apni Dukkan</title>
+    <link rel="stylesheet" href="/css/home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-	<!-- Navigation Bar -->
-	<nav>
-		<span>Apni Dukkan</span> <a th:href="@{/dukkan}">Home</a> <a href="#">Orders</a>
-		<a href="#">Login</a>
-	</nav>
+    <!-- Navbar -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">Apni Dukkan</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#categories">Categories</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
 
-	<!-- Store Banner -->
-	<div class="start">
-		<h1>Ashu General Store</h1>
-		<img src="images/dukkan.png" alt="Ashu General Store Logo">
-	</div>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <h1>Welcome to Apni Dukkan</h1>
+            <p>Your one-stop online store for all your daily needs!</p>
+        </div>
+    </header>
 
-	<!-- Item Categories -->
-	<div class="container">
-		<div class="all-items">
-			<ul>
-				<li><img src="images/BreadMilk.png" alt="Bread and Milk">
-					<span>Bread</span></li>
+    <!-- About Us Section -->
+    <section class="about-us container" id="about">
+        <h2 class="about-title">About Us</h2>
+        <p class="about-description">
+            Welcome to <strong>Apni Dukkan</strong>, your one-stop online shop for all your daily needs! We offer a wide variety of products, from fresh bread and rice to essential cleaning supplies and delicious snacks. Our mission is to provide convenience and quality to our customers while ensuring that you find everything you need in one place.
+        </p>
+        <p class="about-description">
+            At Apni Dukkan, we believe in empowering local vendors and creating a community-oriented marketplace. We strive to deliver the best products at competitive prices, making shopping easy and enjoyable. Whether you’re stocking up for your family or looking for the perfect gift, Apni Dukkan has you covered.
+        </p>
+        <p class="about-description">
+            Join us on this journey to support local businesses and experience the joy of shopping from the comfort of your home!
+        </p>
+    </section>
+    
+    <!-- Categories Section -->
+    <section id="categories">
+        <h2>Categories</h2>
+        <div class="all-items">
+            <div class="item bread-milk" style="background-image: url('https://www.qbake.qa/wp-content/uploads/2018/05/1-2.png');">Bread and Milk</div>
+            <div class="item atta-rice" style="background-image: url('https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=85,metadata=none,w=480,h=480/app/images/products/sliding_image/425632a.jpg');">Atta and Rice</div>
+            <div class="item oil-masala" style="background-image: url('https://sjvmart.in/images/media/2021/07/medium1626195430GVKLn13804.webp');">Oil and Masala</div>
+            <div class="item cleaning-essentials" style="background-image: url('https://gifterzz.com/wp-content/uploads/2021/03/Cleaning-Essentials....jpg');">Cleaning Essentials</div>
+            <div class="item snacks-munchies" style="background-image: url('https://assets.rebelmouse.io/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpbWFnZSI6Imh0dHBzOi8vYXNzZXRzLnJibC5tcy8xMDY5MDM5OS9vcmlnaW4uanBnIiwiZXhwaXJlc19hdCI6MTY5Njg3MDc3OH0.dMvPqNnOv5KP-NgxW4B-GS11tRetKWgdFbPMk6KJwVg/img.jpg?width=980');">Snacks and Munchies</div>
+            <div class="item personal-care" style="background-image: url('images/Product.jpg');">Personal Care</div>
+            <div class="item snacks-munchies" style="background-image: url('https://3.bp.blogspot.com/-Zl-cfxE-jbc/T5c1p4j0U7I/AAAAAAAAGTg/C4P49JeM-h0/s1600/biscuit_assortment.jpg');">Biscuit</div>
+            <div class="item personal-care" style="background-image: url('https://www.youbeli.com/userfiles/image/Instant%20Canned%20Food.png');">Breakfast</div>
+        </div>
+    </section>
 
-				<li><img src="images/AttaRice.png" alt="Atta, Rice and Daal">
-					<strong>Atta, Rice & Daal</strong></li>
+    <!-- Testimonials Section -->
+    <section class="container testimonials">
+        <h2 class="testimonials-title">What People Say About Us</h2>
+        <div class="testimonial">
+            <p class="testimonial-text">"Apni Dukkan is my go-to place for daily groceries! The quality is top-notch, and the delivery is always prompt!"</p>
+            <span class="testimonial-author">- Ramesh Kumar</span>
+        </div>
+        <div class="testimonial">
+            <p class="testimonial-text">"I love the variety of products available. Shopping is so convenient and the prices are reasonable!"</p>
+            <span class="testimonial-author">- Neha Singh</span>
+        </div>
+        <div class="testimonial">
+            <p class="testimonial-text">"Fantastic experience! Customer service is amazing and they really care about their customers!"</p>
+            <span class="testimonial-author">- Anil Sharma</span>
+        </div>
+    </section>
 
-				<li><img src="images/MasalaOil.png" alt="Oil and Masala">
-					<span>Oil & Masala</span></li>
-
-				<li><img src="images/Washing.png" alt="Cleaning Essentials">
-					<span>Cleaning Essentials</span></li>
-
-				<li><img src="images/Breakfast.png"
-					alt="Breakfast and Instant Food"> <span>Breakfast &
-						Instant Food</span></li>
-
-				<li><img src="images/Sauces.png" alt="Sauces"> <span>Sauces</span>
-				</li>
-
-				<li><img src="images/Namkeen.png" alt="Snacks and Munchies">
-					<span>Snacks & Munchies</span></li>
-
-				<li><img src="images/PersonalCare.png"
-					alt="Personal Care Products"> <span>Personal Care</span></li>
-
-				<li><img src="images/Biscuit.png" alt="Biscuits"> <span>Biscuits</span>
-				</li>
-
-				<li><img src="images/Tee.png"
-					alt="Tea, Coffee and Health Drinks"> <span>Tea, Coffee
-						& Health Drink</span></li>
-			</ul>
-		</div>
-	</div>
-
-	<!-- Footer -->
-	<footer>
-		<span>Copyright &copy; 2024 Apni Dukkan</span>
-	</footer>
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <span>&copy; 2024 Apni Dukkan. All Rights Reserved.</span>
+            <div class="social-media">
+                <a href="#" aria-label="Facebook" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" aria-label="Twitter" class="social-icon"><i class="fab fa-twitter"></i></a>
+                <a href="#" aria-label="Instagram" class="social-icon"><i class="fab fa-instagram"></i></a>
+                <a href="#" aria-label="LinkedIn" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>

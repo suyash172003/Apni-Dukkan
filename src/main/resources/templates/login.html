@@ -5,10 +5,13 @@
 <title>Insert title here</title>
 </head>
 <body>
+	
 	<form th:action="@{/login}" th:object="${login}" method="post">
+		<span>Login</span>
 		<input type="text" class="email" placeholder="email" th:field="*{email}">
 		<input type="password" class="password" placeholder="password" th:field="*{password}">
 		<button type="submit">Login</button>
+		<a th:href="@{/register}">New User</a>
 	</form>
 </body>
 </html>

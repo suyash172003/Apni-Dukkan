@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<form th:action="@{/register}" th:object="${register}" method="post">
+		<span>Sign Up</span>
+		<input type="text" placeholder="firstname" th:field="*{firstName}">
+		<input type="text" placeholder="lastname" th:field="*{lastName}">
+		<input type="number" placeholder="mobileNumber" th:field="*{mobileNumber}">
+		<input type="text" placeholder="email" th:field="*{email}">
+		<input type="text" placeholder="password" th:field="*{password}">
+		<button type="submit">Submit</button>
+		<a th:href="@{/login}">Login</a>
+	</form>
+</body>
+</html>
