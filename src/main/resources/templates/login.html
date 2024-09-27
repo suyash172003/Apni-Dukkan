@@ -3,15 +3,16 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
+<link th:href="@{/css/login.css}" rel="stylesheet"></link>
 </head>
 <body>
-	
 	<form th:action="@{/login}" th:object="${login}" method="post">
 		<span>Login</span>
-		<input type="text" class="email" placeholder="email" th:field="*{email}">
-		<input type="password" class="password" placeholder="password" th:field="*{password}">
+		<input type="text" class="email" placeholder="email" th:field="*{email}" required>
+		<input type="password" class="password" placeholder="password" th:field="*{password}" required>
+		<div th:if="${errorMessage}" th:text="${errorMessage}" style="color:red;"></div>
 		<button type="submit">Login</button>
-		<a th:href="@{/register}">New User</a>
+		<a th:href="@{/register}">New User? Register</a>
 	</form>
 </body>
 </html>

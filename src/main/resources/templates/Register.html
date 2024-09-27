@@ -1,19 +1,21 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymleaf.org">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
-<meta charset="ISO-8859-1">
-<title>Insert title here</title>
+    <meta charset="ISO-8859-1">
+    <title>Sign Up</title>
+    <link th:href="@{/css/register.css}" rel="stylesheet" type="text/css">
 </head>
 <body>
-	<form th:action="@{/register}" th:object="${register}" method="post">
-		<span>Sign Up</span>
-		<input type="text" placeholder="firstname" th:field="*{firstName}">
-		<input type="text" placeholder="lastname" th:field="*{lastName}">
-		<input type="number" placeholder="mobileNumber" th:field="*{mobileNumber}">
-		<input type="text" placeholder="email" th:field="*{email}">
-		<input type="text" placeholder="password" th:field="*{password}">
-		<button type="submit">Submit</button>
-		<a th:href="@{/login}">Login</a>
-	</form>
+    <form th:action="@{/register}" th:object="${register}" method="post">
+        <span>Sign Up</span>
+        <input type="text" placeholder="First Name" th:field="*{firstName}" required>
+        <input type="text" placeholder="Last Name" th:field="*{lastName}" required>
+        <input type="tel" placeholder="Mobile Number" th:field="*{mobileNumber}" required>
+        <input type="text" placeholder="Email" th:field="*{email}" required>
+        <input type="password" placeholder="Password" th:field="*{password}" required>
+        <div th:if="${errorMessage}"  th:text="${errorMessage}" style="color:red;"></div>
+        <button type="submit">Submit</button>
+        <a th:href="@{/login}">Already Registered? Login Please</a>
+    </form>
 </body>
 </html>

@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apni Dukkan</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+    <nav>
+    <div class="nav-container">
+        <div class="logo">Apni Dukkan</div>
+        <ul class="nav-links">
+            <li><a th:href="@{/home}">Home</a></li>
+            
+            <!-- Dropdown for Categories -->
+            <li class="dropdown">
+                <a href="#" class="dropbtn">Categories</a>
+                <div class="dropdown-content">
+                     <a th:href="@{/category1}">Bread & Milk</a>
+                    <a th:href="@{/category2}">Atta, Rice & Daal</a>
+                    <a th:href="@{/category3}">Oil & Masala</a>
+                    <a th:href="@{/category4}">Snacks & Munchies</a>
+                </div>
+            </li>
+
+            <li><a th:href="@{/cart}">Cart</a></li>
+            <li><a th:href="@{/orders}">Orders</a></li>
+            <li><a th:href="@{/logout}">Logout</a></li>
+        </ul>
+    </div>
+</nav>
+
+    <section class="products" th:object=${cart}>
+        <div class="category">
+            <h2>Atta</h2>
+            <div class="product-grid">
+                <div class="product">
+                    <form th:action="@{/category2}"  method="post">
+                    	<img src="https://www.kirana.store/image/cache/catalog/METRO%20IMAGES/AASHIRVAAD%20ATTA%201KG%20PK30-500x500.jpg" alt="Atta">
+                    	<p class="orderName">Ashirwad Atta</p>
+                    	<span>5kg</span>
+                    	<span class="price">Price: Rs 120</span>
+                    	<input type="hidden" name="ordername" value="Ashirwad Atta">
+    					<input type="hidden" name="price" value="120">
+    					<input type="hidden" name="quantity" value="5kg">
+                        <input type="hidden" name="image" value="https://www.kirana.store/image/cache/catalog/METRO%20IMAGES/AASHIRVAAD%20ATTA%201KG%20PK30-500x500.jpg">
+                    	<button class="btn">Add</button>
+                    </form>
+                </div>
+                <div class="product">
+                    <form th:action="@{/category2}" method="post">
+                    	<img src="https://www.kirana.store/image/cache/catalog/METRO%20IMAGES/AASHIRVAAD%20ATTA%201KG%20PK30-500x500.jpg" alt="Atta">
+                    	<p class="orderName">Ashirwad Atta</p>
+                    	<span>10kg</span>
+                    	<span class="price">Price: Rs 220</span>
+                    	<input type="hidden" name="ordername" value="Ashirwad Atta">
+                    	<input type="hidden" name="quantity" value="10kg">
+                        <input type="hidden" name="image" value="https://www.kirana.store/image/cache/catalog/METRO%20IMAGES/AASHIRVAAD%20ATTA%201KG%20PK30-500x500.jpg">
+    					<input type="hidden" name="price" value="220">
+    				</form>
+                    <button class="btn">Add</button>
+                </div>
+                <div class="product">
+                    <form th:action="@{/category2}" method="post">
+                    	<img src="https://www.jiomart.com/images/product/600x600/491417436/fortune-chakki-fresh-whole-wheat-atta-10-kg-product-images-o491417436-p491417436-0-202203170527.jpg" alt="Atta">
+	                    <p class="orderName">Fortune Atta</p>
+	                    <span>5kg</span>
+	                    <span class="price">Price: Rs 100</span>
+	                    <input type="hidden" name="ordername" value="Fortune Atta">
+    					<input type="hidden" name="price" value="100">
+    					<input type="hidden" name="quantity" value="5kg">
+                        <input type="hidden" name="image" value="https://www.jiomart.com/images/product/600x600/491417436/fortune-chakki-fresh-whole-wheat-atta-10-kg-product-images-o491417436-p491417436-0-202203170527.jpg">
+                    	<button class="btn">Add</button>
+                    </form>
+                </div>
+                <div class="product">
+                    <img src="https://www.jiomart.com/images/product/600x600/491417436/fortune-chakki-fresh-whole-wheat-atta-10-kg-product-images-o491417436-p491417436-0-202203170527.jpg" alt="Atta">
+                    <form th:action="@{/category2}" method="post">
+	                    <p class="orderName">Fortune Atta</p>
+	                    <span>10kg</span>
+	                    <span class="price">Price: Rs 190</span>
+	                    <input type="hidden" name="ordername" value="Fortune Atta">
+	    				<input type="hidden" name="price" value="190">
+	    				<input type="hidden" name="quantity" value="10kg">
+                        <input type="hidden" name="image" value="https://www.jiomart.com/images/product/600x600/491417436/fortune-chakki-fresh-whole-wheat-atta-10-kg-product-images-o491417436-p491417436-0-202203170527.jpg">
+	                    <button class="btn">Add</button>
+	                </form>
+                </div>
+                
+                
+            </div>
+        </div>
+
+        <div class="category">
+            <h2>Rice</h2>
+            <div class="product-grid">
+                <div class="product">
+                	<form th:action="@{/category2}" method="post">
+                		<img src="https://zakiasianfoods.de/wp-content/uploads/2022/09/IMG_2977-600x718.jpg" alt="Rice">
+                		<p>Sella Rice</p>
+                    	<span>1kg</span>
+                    	<span>Price: Rs 70</span>
+	                    <input type="hidden" name="ordername" value="Sella Rice">
+    					<input type="hidden" name="price" value="120">
+    					<input type="hidden" name="quantity" value="1kg">
+                        <input type="hidden" name="image" value="https://zakiasianfoods.de/wp-content/uploads/2022/09/IMG_2977-600x718.jpg">
+	                    <button class="btn">Add</button>
+                    </form>
+                </div>
+                
+                <div class="product">
+                    <form th:action="@{/category2}" method="post">
+                		<img src="https://i.pinimg.com/736x/ab/56/f9/ab56f90f39a0eca86e98409fd3cc6372.jpg" alt="Rice">
+                		<p>Basmati Rice</p>
+                    	<span>1kg</span>
+                    	<span>Price: Rs 90</span>
+	                    <input type="hidden" name="ordername" value="Basmati Rice">
+    					<input type="hidden" name="price" value="90">
+    					<input type="hidden" name="quantity" value="1kg">
+                        <input type="hidden" name="image" value="https://i.pinimg.com/736x/ab/56/f9/ab56f90f39a0eca86e98409fd3cc6372.jpg">
+	                    <button class="btn">Add</button>
+                    </form>
+                </div>
+                <div class="product">
+                    <form th:action="@{/category2}" method="post">
+                		<img src="https://chefcart.com.bd/wp-content/uploads/2020/12/Dawat-Biryani-Basmati-Rice-5kg.jpg" alt="Rice">
+                		<p>Biryani Rice</p>
+                    	<span>1kg</span>
+                    	<span>Price: Rs 120</span>
+	                    <input type="hidden" name="ordername" value="Basmati Rice">
+    					<input type="hidden" name="price" value="90">
+    					<input type="hidden" name="quantity" value="1kg">
+                        <input type="hidden" name="image" value="https://chefcart.com.bd/wp-content/uploads/2020/12/Dawat-Biryani-Basmati-Rice-5kg.jpg">
+	                    <button class="btn">Add</button>
+                    </form>
+                </div>
+                
+                
+            </div>
+        </div>
+        
+        
+        <div class="category">
+            <h2>Daal</h2>
+            <div class="product-grid">
+                <div class="product">
+                    <form th:action="@{/category2}"  method="post">
+	                    <img src="https://ahaar.com/wp-content/uploads/2022/09/Ahaar-Arhar-Daal-Front-Image-1024x1024.png" alt="Daal">
+	                    <p>Aarhar Daal</p>
+	                    <span>1kg</span>
+	                    <span>Price: Rs 180</span>
+	                    <input type="hidden" name="ordername" value="Aarhar Daal">
+    					<input type="hidden" name="price" value="180">
+    					<input type="hidden" name="quantity" value="1kg">
+                        <input type="hidden" name="image" value="https://ahaar.com/wp-content/uploads/2022/09/Ahaar-Arhar-Daal-Front-Image-1024x1024.png">
+	                    <button class="btn">Add</button>
+	                </form>
+                </div>
+                <div class="product">
+                	<form th:action="@{/category2}"  method="post">
+	                    <img src="https://5.imimg.com/data5/SELLER/Default/2021/10/BF/ZC/XM/79725853/24c71a20-6ea9-4815-99fd-339d357191a3-500x500-1--1000x1000.jpg" alt="Daal">
+	                    <p>Urad Daal</p>
+	                    <span>1kg</span>
+	                    <span>Price: Rs 130</span>
+	                    <input type="hidden" name="ordername" value="Urad Daal">
+    					<input type="hidden" name="price" value="130">
+    					<input type="hidden" name="quantity" value="1kg">
+                        <input type="hidden" name="image" value="https://5.imimg.com/data5/SELLER/Default/2021/10/BF/ZC/XM/79725853/24c71a20-6ea9-4815-99fd-339d357191a3-500x500-1--1000x1000.jpg">
+	                    <button class="btn">Add</button>
+	                </form>
+                </div>
+        
+                <div class="product">
+                	<form th:action="@{/category2}"  method="post">
+	                    <img src="https://5.imimg.com/data5/SELLER/Default/2022/11/TV/BD/LH/39621821/small-grain-masoor-daal-500x500.jpg" alt="Daal">
+	                    <p>Masoor Daal</p>
+	                    <span>1kg</span>
+	                    <span>Price: Rs 100</span>
+	                    <input type="hidden" name="ordername" value="Masoor Daal">
+    					<input type="hidden" name="price" value="100">
+    					<input type="hidden" name="quantity" value="1kg">
+                        <input type="hidden" name="image" value="https://5.imimg.com/data5/SELLER/Default/2022/11/TV/BD/LH/39621821/small-grain-masoor-daal-500x500.jpg">
+	                    <button class="btn">Add</button>
+	                </form>
+                </div>
+                
+                <div class="product">
+                	<form th:action="@{/category2}"  method="post">
+	                    <img src="https://5.imimg.com/data5/SELLER/Default/2023/8/333447757/SO/GT/KH/134635974/moong-daal-1kg-1000x1000.png" alt="Daal">
+	                    <p>Moong Daal</p>
+	                    <span>1kg</span>
+	                    <span>Price: Rs 100</span>
+	                    <input type="hidden" name="ordername" value="Moong Daal">
+    					<input type="hidden" name="price" value="100">
+    					<input type="hidden" name="quantity" value="1kg">
+                        <input type="hidden" name="image" value="https://5.imimg.com/data5/SELLER/Default/2023/8/333447757/SO/GT/KH/134635974/moong-daal-1kg-1000x1000.png">
+	                    <button class="btn">Add</button>
+	                </form>
+                </div>
+            
+            </div>
+        </div>
+        
+         <div class="category">
+            <h2>Cholle & Maatar</h2>
+            <div class="product-grid">
+                <div class="product">
+                    <form th:action="@{/category2}"  method="post">
+	                    <img src="https://e-srdc.com/api/assets/chole_pkt.jpg" alt="Daal">
+	                    <p>Cholle</p>
+	                    <span>1kg</span>
+	                    <span>Price: Rs 180</span>
+	                    <input type="hidden" name="ordername" value="Cholle">
+    					<input type="hidden" name="price" value="180">
+    					<input type="hidden" name="quantity" value="1kg">
+                        <input type="hidden" name="image" value="https://e-srdc.com/api/assets/chole_pkt.jpg">
+	                    <button class="btn">Add</button>
+	                </form>
+                </div>
+                <div class="product">
+                    <form th:action="@{/category2}"  method="post">
+	                    <img src="https://images-na.ssl-images-amazon.com/images/I/81Lpiyl6YYL._AC_SL1500_.jpg" alt="Daal">
+	                    <p>Matar</p>
+	                    <span>1kg</span>
+	                    <span>Price: Rs 130</span>
+	                    <input type="hidden" name="ordername" value="Matar">
+    					<input type="hidden" name="price" value="130">
+    					<input type="hidden" name="quantity" value="1kg">
+                        <input type="hidden" name="image" value="https://images-na.ssl-images-amazon.com/images/I/81Lpiyl6YYL._AC_SL1500_.jpg">
+	                    <button class="btn">Add</button>
+	                </form>
+                </div>
+                <div class="product">
+                    <form th:action="@{/category2}"  method="post">
+	                    <img src="https://induzorganic.com/wp-content/uploads/2022/01/CHANA-WHOLE-500-GM.jpeg" alt="Daal">
+	                    <p>Chana</p>
+	                    <span>1kg</span>
+	                    <span>Price: Rs 130</span>
+	                    <input type="hidden" name="ordername" value="Chana">
+    					<input type="hidden" name="price" value="130">
+    					<input type="hidden" name="quantity" value="1kg">
+                        <input type="hidden" name="image" value="https://induzorganic.com/wp-content/uploads/2022/01/CHANA-WHOLE-500-GM.jpeg">
+	                    <button class="btn">Add</button>
+	                </form>
+                </div>
+                <div class="product">
+                    <form th:action="@{/category2}"  method="post">
+	                    <img src="https://5.imimg.com/data5/SELLER/Default/2023/2/UM/YT/PK/153875277/rajma-kashmiri-1000x1000.png" alt="Daal">
+	                    <p>Rajama</p>
+	                    <span>1kg</span>
+	                    <span>Price: Rs 100</span>
+	                    <input type="hidden" name="ordername" value="Laal Rajama">
+	                    <input type="hidden" name="quantity" value="1kg">
+                        <input type="hidden" name="image" value="https://5.imimg.com/data5/SELLER/Default/2023/2/UM/YT/PK/153875277/rajma-kashmiri-1000x1000.png">
+    					<input type="hidden" name="price" value="100">
+	                    <button class="btn">Add</button>
+	                </form>
+                </div>
+                
+               
+                
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <span>Copyright &copy; 2024 Apni Dukkan</span>
+    </footer>
+</body>
+
+</html>

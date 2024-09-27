@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apni Dukkan</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+    <nav>
+    <div class="nav-container">
+        <div class="logo">Apni Dukkan</div>
+        <ul class="nav-links">
+            <li><a th:href="@{/home}">Home</a></li>
+            
+            <!-- Dropdown for Categories -->
+            <li class="dropdown">
+                <a href="#" class="dropbtn">Categories</a>
+                <div class="dropdown-content">
+                     <a th:href="@{/category1}">Bread & Milk</a>
+                    <a th:href="@{/category2}">Atta, Rice & Daal</a>
+                    <a th:href="@{/category3}">Oil & Masala</a>
+                    <a th:href="@{/category4}">Snacks & Munchies</a>
+                </div>
+            </li>
+
+            <li><a th:href="@{/cart}">Cart</a></li>
+            <li><a th:href="@{/orders}">Orders</a></li>
+            <li><a th:href="@{/logout}">Logout</a></li>
+        </ul>
+    </div>
+</nav>
+
+    <section class="products" th:object=${cart}>
+        <div class="category">
+            <h2>Oil</h2>
+            <div class="product-grid">
+                <div class="product">
+                    <form th:action="@{/category3}"  method="post">
+                    	<img src="https://5.imimg.com/data5/SELLER/Default/2022/4/VV/EG/RI/2211711/whatsapp-image-2021-06-17-at-6-00-16-pm-1--500x500.jpeg" alt="Oil">
+                    	<p class="orderName">Fortune Oil</p>
+                    	<span>1kg</span>
+                    	<span class="price">Price: Rs 160</span>
+                    	<input type="hidden" name="ordername" value="Fortune Oil">
+    					<input type="hidden" name="price" value="160">
+    					<input type="hidden" name="quantity" value="1kg">
+                        <input type="hidden" name="image" value="https://5.imimg.com/data5/SELLER/Default/2022/4/VV/EG/RI/2211711/whatsapp-image-2021-06-17-at-6-00-16-pm-1--500x500.jpeg">
+                    	<button class="btn">Add</button>
+                    </form>
+                </div>
+                <div class="product">
+                    <form th:action="@{/category3}"  method="post">
+                    	<img src="https://m.media-amazon.com/images/I/61wXcsdcmSL._SL1500_.jpg" alt="Oil">
+                    	<p class="orderName">Patanjali Oil</p>
+                    	<span>1kg</span>
+                    	<span class="price">Price: Rs 145</span>
+                    	<input type="hidden" name="ordername" value="Patanjali Oil">
+    					<input type="hidden" name="price" value="145">
+    					<input type="hidden" name="quantity" value="1kg">
+                        <input type="hidden" name="image" value="https://m.media-amazon.com/images/I/61wXcsdcmSL._SL1500_.jpg">
+                    	<button class="btn">Add</button>
+                    </form>
+                </div>
+                <div class="product">
+                    <form th:action="@{/category3}"  method="post">
+                    	<img src="https://lsmedia.linker-cdn.net/1/2020/4149560.jpg" alt="Oil">
+                    	<p class="orderName">Nature Fresh Oil</p>
+                    	<span>1kg</span>
+                    	<span class="price">Price: Rs 190</span>
+                    	<input type="hidden" name="ordername" value="Nature Fresh Oil">
+    					<input type="hidden" name="price" value="190">
+    					<input type="hidden" name="quantity" value="1kg">
+                        <input type="hidden" name="image" value="https://lsmedia.linker-cdn.net/1/2020/4149560.jpg">
+                    	<button class="btn">Add</button>
+                    </form>
+                </div>
+                <div class="product">
+                    <form th:action="@{/category3}"  method="post">
+                    	<img src="https://mantoragroup.com/images/2%20ltr%20bottle%20Front.jpg" alt="Oil">
+                    	<p class="orderName">Bawarchi Oil</p>
+                    	<span>1kg</span>
+                    	<span class="price">Price: Rs 140</span>
+                    	<input type="hidden" name="ordername" value="Bawarchi Oil">
+    					<input type="hidden" name="price" value="140">
+    					<input type="hidden" name="quantity" value="1kg">
+                        <input type="hidden" name="image" value="https://mantoragroup.com/images/2%20ltr%20bottle%20Front.jpg">
+                    	<button class="btn">Add</button>
+                    </form>
+                </div>
+                
+            </div>
+        </div>
+
+        <div class="category">
+            <h2>Masala</h2>
+            <div class="product-grid">
+                <div class="product">
+                	<form th:action="@{/category3}" method="post">
+                		<img src="https://m.media-amazon.com/images/I/71sOfb+-VuL._SY879_.jpg" alt="Masala">
+                		<p>Panner Masala</p>
+                    	<span>50g</span>
+                    	<span>Price: Rs 50</span>
+	                    <input type="hidden" name="ordername" value="Panner Masala">
+    					<input type="hidden" name="price" value="50">
+    					<input type="hidden" name="quantity" value="50g">
+                        <input type="hidden" name="image" value="https://m.media-amazon.com/images/I/71sOfb+-VuL._SY879_.jpg">
+	                    <button class="btn">Add</button>
+                    </form>
+                </div>
+                
+                <div class="product">
+                	<form th:action="@{/category3}" method="post">
+                		<img src="https://rozaana.s3.ap-south-1.amazonaws.com/uploads/products/photos/XzCxPUfiBTzbQrI2esB8ppv1lhu43ZQWydjA0NLM.jpg" alt="Masala">
+                		<p>Garam Masala</p>
+                    	<span>50g</span>
+                    	<span>Price: Rs 70</span>
+	                    <input type="hidden" name="ordername" value="Garam Masala">
+    					<input type="hidden" name="price" value="70">
+    					<input type="hidden" name="quantity" value="50g">
+                        <input type="hidden" name="image" value="https://rozaana.s3.ap-south-1.amazonaws.com/uploads/products/photos/XzCxPUfiBTzbQrI2esB8ppv1lhu43ZQWydjA0NLM.jpg">
+	                    <button class="btn">Add</button>
+                    </form>
+                </div>
+                <div class="product">
+                	<form th:action="@{/category3}" method="post">
+                		<img src="https://n2.sdlcdn.com/imgs/h/j/q/Ashok-Masale-Sabji-Masala-Powder-SDL333482558-2-1fe2b.jpg" alt="Masala">
+                		<p>Sabji Masala</p>
+                    	<span>50g</span>
+                    	<span>Price: Rs 90</span>
+	                    <input type="hidden" name="ordername" value="Sabji Masala">
+    					<input type="hidden" name="price" value="90">
+    					<input type="hidden" name="quantity" value="50g">
+                        <input type="hidden" name="image" value="https://n2.sdlcdn.com/imgs/h/j/q/Ashok-Masale-Sabji-Masala-Powder-SDL333482558-2-1fe2b.jpg">
+	                    <button class="btn">Add</button>
+                    </form>
+                </div>
+                <div class="product">
+                	<form th:action="@{/category3}" method="post">
+                		<img src="https://cdn.justgotochef.com/uploads/1548761290-Ashok%20Chhole%20Masala-Front.jpg" alt="Masala">
+                		<p>Chhole Masala</p>
+                    	<span>50g</span>
+                    	<span>Price: Rs 70</span>
+	                    <input type="hidden" name="ordername" value="Chhole Masala">
+    					<input type="hidden" name="price" value="70">
+    					<input type="hidden" name="quantity" value="50g">
+                        <input type="hidden" name="image" value="https://cdn.justgotochef.com/uploads/1548761290-Ashok%20Chhole%20Masala-Front.jpg">
+	                    <button class="btn">Add</button>
+                    </form>
+                </div>
+                
+            </div>
+        </div>
+      </section>
+    <footer>
+        <span>Copyright &copy; 2024 Apni Dukkan</span>
+    </footer>
+</body>
+
+</html>

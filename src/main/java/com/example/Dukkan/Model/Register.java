@@ -1,18 +1,21 @@
 package com.example.Dukkan.Model;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 @Entity
 public class Register {
 	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private long id;
 	private String firstName;
 	private String lastName;
-	private long mobileNumber;
+	private String mobileNumber;
 	private String email;
 	private String password;
-	public Register(long id, String firstName, String lastName, long mobileNumber, String email, String password) {
+	public Register(long id, String firstName, String lastName, String mobileNumber, String email, String password) {
 		super();
 		this.id = id;
 		this.firstName = firstName;
@@ -22,8 +25,7 @@ public class Register {
 		this.password = password;
 	}
 	
-	public Register(){}
-	
+	public Register() {}
 	public long getId() {
 		return id;
 	}
@@ -42,10 +44,10 @@ public class Register {
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
 	}
-	public long getMobileNumber() {
+	public String getMobileNumber() {
 		return mobileNumber;
 	}
-	public void setMobileNumber(long mobileNumber) {
+	public void setMobileNumber(String mobileNumber) {
 		this.mobileNumber = mobileNumber;
 	}
 	public String getEmail() {
@@ -60,11 +62,5 @@ public class Register {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	@Override
-	public String toString() {
-		return "Register [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", mobileNumber="
-				+ mobileNumber + ", email=" + email + ", password=" + password + "]";
-	}
-	
 	
 }

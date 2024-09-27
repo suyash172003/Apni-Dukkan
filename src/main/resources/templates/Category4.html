@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apni Dukkan</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+    <nav>
+    <div class="nav-container">
+        <div class="logo">Apni Dukkan</div>
+        <ul class="nav-links">
+            <li><a th:href="@{/home}">Home</a></li>
+            
+            <!-- Dropdown for Categories -->
+            <li class="dropdown">
+                <a href="#" class="dropbtn">Categories</a>
+                <div class="dropdown-content">
+                     <a th:href="@{/category1}">Bread & Milk</a>
+                    <a th:href="@{/category2}">Atta, Rice & Daal</a>
+                    <a th:href="@{/category3}">Oil & Masala</a>
+                    <a th:href="@{/category4}">Snacks & Munchies</a>
+                </div>
+            </li>
+
+            <li><a th:href="@{/cart}">Cart</a></li>
+            <li><a th:href="@{/orders}">Orders</a></li>
+            <li><a th:href="@{/logout}">Logout</a></li>
+        </ul>
+    </div>
+</nav>
+
+    <section class="products" th:object=${cart}>
+        <div class="category">
+            <h2>Snacks</h2>
+            <div class="product-grid">
+                <div class="product">
+                    <form th:action="@{/category4}"  method="post">
+                    	<img src="https://m.media-amazon.com/images/I/71BrSCM1iFL._SL1500_.jpg" alt="Chips">
+                    	<p class="orderName">Uncle Chips</p>
+                    	<span>10g</span>
+                    	<span class="price">Price: Rs 10</span>
+                    	<input type="hidden" name="ordername" value="Uncle Chips">
+    					<input type="hidden" name="price" value="10">
+    					<input type="hidden" name="quantity" value="10g">
+                        <input type="hidden" name="image" value="https://m.media-amazon.com/images/I/71BrSCM1iFL._SL1500_.jpg">
+                    	<button class="btn">Add</button>
+                    </form>
+                </div>
+                <div class="product">
+                    <form th:action="@{/category4}"  method="post">
+                    	<img src="https://gumlet-images.assettype.com/afaqs/2023-10/cb9eed37-a5c0-4996-b28e-f1717efaa741/Gandhi_the_original_D2C_Brand__6_.png?w=1200&auto=format%2Ccompress&ogImage=true" alt="Chips">
+                    	<p class="orderName">Tedha Medha</p>
+                    	<span>10g</span>
+                    	<span class="price">Price: Rs 10</span>
+                    	<input type="hidden" name="ordername" value="Tedha Medha">
+    					<input type="hidden" name="price" value="10">
+    					<input type="hidden" name="quantity" value="10g">
+                        <input type="hidden" name="image" value="https://gumlet-images.assettype.com/afaqs/2023-10/cb9eed37-a5c0-4996-b28e-f1717efaa741/Gandhi_the_original_D2C_Brand__6_.png?w=1200&auto=format%2Ccompress&ogImage=true">
+                    	<button class="btn">Add</button>
+                    </form>
+                </div>
+                <div class="product">
+                    <form th:action="@{/category4}"  method="post">
+                    	<img src="https://5.imimg.com/data5/SELLER/Default/2023/12/368288132/TG/XE/GZ/135934286/crax-rings-tangy-tomato-500x500.jpg" alt="Chips">
+                    	<p class="orderName">Crax</p>
+                    	<span>10g</span>
+                    	<span class="price">Price: Rs 10</span>
+                    	<input type="hidden" name="ordername" value="Crax">
+    					<input type="hidden" name="price" value="10">
+    					<input type="hidden" name="quantity" value="10g">
+                        <input type="hidden" name="image" value="https://5.imimg.com/data5/SELLER/Default/2023/12/368288132/TG/XE/GZ/135934286/crax-rings-tangy-tomato-500x500.jpg">
+                    	<button class="btn">Add</button>
+                    </form>
+                </div>
+                <div class="product">
+                    <form th:action="@{/category4}"  method="post">
+                    	<img src="http://rukmini1.flixcart.com/image/300/300/xif0q/chips/a/8/3/82-natkhat-classic-1-crax-original-imagr7azgkf9uf4n.jpeg" alt="Chips">
+                    	<p class="orderName">Natkhat</p>
+                    	<span>10g</span>
+                    	<span class="price">Price: Rs 10</span>
+                    	<input type="hidden" name="ordername" value="Natkhat">
+    					<input type="hidden" name="price" value="10">
+    					<input type="hidden" name="quantity" value="10g">
+                        <input type="hidden" name="image" value="http://rukmini1.flixcart.com/image/300/300/xif0q/chips/a/8/3/82-natkhat-classic-1-crax-original-imagr7azgkf9uf4n.jpeg">
+                    	<button class="btn">Add</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="category">
+            <h2>Namkeen</h2>
+            <div class="product-grid">
+                <div class="product">
+                	<form th:action="@{/category4}" method="post">
+                		<img src="https://parulfoodproduct.com/images/namkeen/namkeen-rs-10/aloo_bhujiya.jpg" alt="Namkeen">
+                		<p>Aloo Bhujiya</p>
+                    	<span>250g</span>
+                    	<span>Price: Rs 40</span>
+	                    <input type="hidden" name="ordername" value="Aloo Bhujiya">
+    					<input type="hidden" name="price" value="40">
+    					<input type="hidden" name="quantity" value="250g">
+                        <input type="hidden" name="image" value="https://parulfoodproduct.com/images/namkeen/namkeen-rs-10/aloo_bhujiya.jpg">
+	                    <button class="btn">Add</button>
+                    </form>
+                </div>
+                
+                 <div class="product">
+                	<form th:action="@{/category4}" method="post">
+                		<img src="https://parulfoodproduct.com/images/namkeen/namkeen-rs-5/panjabi_tadka.jpg" alt="Namkeen">
+                		<p>Punjabi Tadka</p>
+                    	<span>250g</span>
+                    	<span>Price: Rs 40</span>
+	                    <input type="hidden" name="ordername" value="Punjabi Tadka">
+    					<input type="hidden" name="price" value="40">
+    					<input type="hidden" name="quantity" value="250g">
+                        <input type="hidden" name="image" value="https://parulfoodproduct.com/images/namkeen/namkeen-rs-5/panjabi_tadka.jpg">
+	                    <button class="btn">Add</button>
+                    </form>
+                </div>
+                
+                 <div class="product">
+                	<form th:action="@{/category4}" method="post">
+                		<img src="https://parulfoodproduct.com/images/namkeen/namkeen-rs-5/Chana_dal.jpg" alt="Namkeen">
+                		<p>Hing Chana</p>
+                    	<span>250g</span>
+                    	<span>Price: Rs 40</span>
+	                    <input type="hidden" name="ordername" value="Hing Chana">
+    					<input type="hidden" name="price" value="40">
+    					<input type="hidden" name="quantity" value="250g">
+                        <input type="hidden" name="image" value="https://parulfoodproduct.com/images/namkeen/namkeen-rs-5/Chana_dal.jpg">
+	                    <button class="btn">Add</button>
+                    </form>
+                </div>
+                
+                 <div class="product">
+                	<form th:action="@{/category4}" method="post">
+                		<img src="https://parulfoodproduct.com/images/namkeen/namkeen-rs-5/diet_chiwda.jpg" alt="Namkeen">
+                		<p>Diet Chidwa</p>
+                    	<span>250g</span>
+                    	<span>Price: Rs 40</span>
+	                    <input type="hidden" name="ordername" value="Diet Chidwa">
+    					<input type="hidden" name="price" value="40">
+    					<input type="hidden" name="quantity" value="250g">
+                        <input type="hidden" name="image" value="https://parulfoodproduct.com/images/namkeen/namkeen-rs-5/diet_chiwda.jpg">
+	                    <button class="btn">Add</button>
+                    </form>
+                </div>
+              
+            </div>
+        </div>
+	</section>
+    <footer>
+        <span>Copyright &copy; 2024 Apni Dukkan</span>
+    </footer>
+</body>
+
+</html>
