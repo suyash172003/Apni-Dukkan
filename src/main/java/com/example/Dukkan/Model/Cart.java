@@ -4,7 +4,9 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.Lob;
+import jakarta.persistence.ManyToOne;
 
 @Entity
 public class Cart {
@@ -16,21 +18,41 @@ public class Cart {
 	private String quantity;
 	private long price;
     private String image;
-	public Cart(long id, String ordername, String quantity, long price, String image) {
+    private Long userId;
+	
+	@ManyToOne
+	@JoinColumn
+	private Register register;
+	
+	
+	public Cart(long id, String ordername, String quantity, long price, String image, Long userId, Register register) {
 		super();
 		this.id = id;
 		this.ordername = ordername;
 		this.quantity = quantity;
 		this.price = price;
 		this.image = image;
+		this.userId = userId;
+		this.register = register;
 	}
-	
 	public Cart() {}
 	public long getId() {
 		return id;
 	}
 	public void setId(long id) {
 		this.id = id;
+	}
+	public Long getUserId() {
+		return userId;
+	}
+	public void setUserId(Long userId) {
+		this.userId = userId;
+	}
+	public Register getRegister() {
+		return register;
+	}
+	public void setRegister(Register register) {
+		this.register = register;
 	}
 	public String getOrdername() {
 		return ordername;
@@ -56,5 +78,4 @@ public class Cart {
 	public void setImage(String image) {
 		this.image = image;
 	}
-	
 }

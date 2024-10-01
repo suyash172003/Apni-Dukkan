@@ -1,119 +1,141 @@
 <!DOCTYPE html>
 <html xmlns:th="https://www.thymleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Apni Dukkan - Your one-stop online store for all daily needs.">
-    <meta name="keywords" content="grocery, daily needs, bread, rice, snacks, personal care">
-    <meta name="author" content="Apni Dukkan">
-    <title>Apni Dukkan</title>
-    <link rel="stylesheet" href="/css/home.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description"
+	content="Apni Dukkan - Your one-stop online store for all daily needs.">
+<meta name="keywords"
+	content="grocery, daily needs, bread, rice, snacks, personal care">
+<meta name="author" content="Apni Dukkan">
+<title>Apni Dukkan</title>
+<link rel="stylesheet" href="/css/home.css">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <header>
-        <nav>
-            <div class="nav-container">
-                <div class="logo">Apni Dukkan</div>
-                <ul class="nav-links">
-                    <li><a th:href="@{/home}" aria-label="Home">Home</a></li>
-                    <li class="dropdown">
-                        <a href="#" class="dropbtn" aria-label="Categories">Categories</a>
-                        <div class="dropdown-content">
-                            <a th:href="@{/category1}" aria-label="Bread and Milk">Bread & Milk</a>
-                            <a th:href="@{/category2}" aria-label="Atta, Rice, and Daal">Atta, Rice & Daal</a>
-                            <a th:href="@{/category3}" aria-label="Oil and Masala">Oil & Masala</a>
-                            <a th:href="@{/category4}" aria-label="Snacks and Munchies">Snacks & Munchies</a>
-                        </div>
-                    </li>
-                    <li><a th:href="@{/cart}" aria-label="Cart">Cart</a></li>
-                    <li><a th:href="@{/orders}" aria-label="Orders">Orders</a></li>
-                    <div th:if="${login}">
-                        <li><a th:href="@{/logout}" aria-label="Logout">Logout</a></li>
-                    </div>
-                    <div th:if="${login}==null">
-                        <li><a th:href="@{/login}" aria-label="Login">Login</a></li>
-                    </div>
-                </ul>
-            </div>
-        </nav>
-    </header>
+	<header>
+		<nav>
+			<div class="nav-container">
+				<div class="logo">Apni Dukkan</div>
+				<ul class="nav-links">
+					<li><a th:href="@{/home}" aria-label="Home">Home</a></li>
+					<li class="dropdown"><a href="#" class="dropbtn"
+						aria-label="Categories">Categories</a>
+						<div class="dropdown-content">
+							<a th:href="@{/category1}" aria-label="Bread and Milk">Bread
+								& Milk</a> <a th:href="@{/category2}"
+								aria-label="Atta, Rice, and Daal">Atta, Rice & Daal</a> <a
+								th:href="@{/category3}" aria-label="Oil and Masala">Oil &
+								Masala</a> <a th:href="@{/category4}"
+								aria-label="Snacks and Munchies">Snacks & Munchies</a>
+						</div></li>
+					<li><a th:href="@{/cart}" aria-label="Cart">Cart</a></li>
+					<li><a th:href="@{/orders}" aria-label="Orders">Orders</a></li>
+					<div th:if="${login}">
+						<li><a th:href="@{/logout}" aria-label="Logout">Logout</a></li>
+					</div>
+					<div th:if="${login}==null">
+						<li><a th:href="@{/login}" aria-label="Login">Login</a></li>
+					</div>
+				</ul>
+			</div>
+		</nav>
+	</header>
 
-    <main>
-        <section class="header">
-            <div class="header-content">
-                <h1>Welcome to Apni Dukkan</h1>
-                <p>Your one-stop online store for all your daily needs!</p>
-            </div>
-        </section>
+	<main>
+		<section class="header">
+			<div class="header-content">
+				<h1>Welcome to Apni Dukkan</h1>
+				<p>Your one-stop online store for all your daily needs!</p>
+			</div>
+		</section>
 
-       <section class="about-us container" id="about">
-    <h2 class="about-title">About Us</h2>
-    <div class="about-content">
-        <img src="../images/Home.png" alt="About Us" class="about-image"> <!-- Add your image here -->
-        <div class="about-text">
-            <p class="about-description">
-                Welcome to <strong>Apni Dukkan</strong>, your one-stop online shop for all your daily needs! We offer a wide variety of products, from fresh bread and rice to essential cleaning supplies and delicious snacks. Our mission is to provide convenience and quality to our customers while ensuring that you find everything you need in one place.
-            </p>
-            <p class="about-description">
-                At Apni Dukkan, we believe in the power of a seamless shopping experience. That's why we have carefully curated categories, easy navigation, and secure checkout to make your grocery shopping simple and hassle-free.
-            </p>
-        </div>
-    </div>
-</section>
-
-
-      <section id="categories">
-    <h2>Explore Our Categories</h2>
-    <div class="all-items">
-        <div class="item" style="background-image:url('https://www.qbake.qa/wp-content/uploads/2018/05/1-2.png');">
-            <div class="item-text">Bread & Milk</div>
-        </div>
-        <div class="item" style="background-image:url('https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=85,metadata=none,w=480,h=480/app/images/products/sliding_image/425632a.jpg');">
-            <div class="item-text">Atta, Rice & Daal</div>
-        </div>
-        <div class="item" style="background-image:url('https://sjvmart.in/images/media/2021/07/medium1626195430GVKLn13804.webp');">
-            <div class="item-text">Oil & Masala</div>
-        </div>
-        <div class="item" style="background-image:url('https://assets.rebelmouse.io/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpbWFnZSI6Imh0dHBzOi8vYXNzZXRzLnJibC5tcy8xMDY5MDM5OS9vcmlnaW4uanBnIiwiZXhwaXJlc19hdCI6MTY5Njg3MDc3OH0.dMvPqNnOv5KP-NgxW4B-GS11tRetKWgdFbPMk6KJwVg/img.jpg?width=980');">
-            <div class="item-text">Snacks & Munchies</div>
-        </div>
-    </div>
-</section>
+		<section class="about-us container" id="about">
+			<h2 class="about-title">About Us</h2>
+			<div class="about-content">
+				<img src="../images/Home.png" alt="About Us" class="about-image">
+				<!-- Add your image here -->
+				<div class="about-text">
+					<p class="about-description">
+						Welcome to <strong>Apni Dukkan</strong>, your one-stop online shop
+						for all your daily needs! We offer a wide variety of products,
+						from fresh bread and rice to essential cleaning supplies and
+						delicious snacks. Our mission is to provide convenience and
+						quality to our customers while ensuring that you find everything
+						you need in one place.
+					</p>
+					<p class="about-description">At Apni Dukkan, we believe in the
+						power of a seamless shopping experience. That's why we have
+						carefully curated categories, easy navigation, and secure checkout
+						to make your grocery shopping simple and hassle-free.</p>
+				</div>
+			</div>
+		</section>
 
 
-       <section class="testimonials">
-    <h2>What Our Customers Say</h2>
-    <div class="testimonial-container">
-        <div class="testimonial">
-            <div class="testimonial-avatar">
-                <img src="https://png.pngtree.com/png-clipart/20230112/original/pngtree-original-hand-painted-cute-cartoon-handsome-boy-avatar-line-draft-impasto-png-image_8905045.png" alt="Ramesh's Avatar" />
-            </div>
-            <p class="testimonial-text">"Apni Dukkan has made grocery shopping so easy for me. I love the variety and the quick delivery!"</p>
-            <p class="testimonial-author">- Ramesh, Mumbai</p>
-        </div>
-        <div class="testimonial">
-            <div class="testimonial-avatar">
-                <img src="https://thumbs.dreamstime.com/b/young-woman-avatar-cartoon-character-profile-picture-young-woman-wearing-blue-t-shirt-bandana-avatar-cartoon-character-149732053.jpg" alt="Sunita's Avatar" />
-            </div>
-            <p class="testimonial-text">"Amazing service! I always find what I need at Apni Dukkan."</p>
-            <p class="testimonial-author">- Sunita, Delhi</p>
-        </div>
-    </div>
-</section>
+		<section id="categories">
+			<h2>Explore Our Categories</h2>
+			<div class="all-items">
+				<div class="item"
+					style="background-image: url('https://www.qbake.qa/wp-content/uploads/2018/05/1-2.png');">
+					<div class="item-text">Bread & Milk</div>
+				</div>
+				<div class="item"
+					style="background-image: url('https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=85,metadata=none,w=480,h=480/app/images/products/sliding_image/425632a.jpg');">
+					<div class="item-text">Atta, Rice & Daal</div>
+				</div>
+				<div class="item"
+					style="background-image: url('https://sjvmart.in/images/media/2021/07/medium1626195430GVKLn13804.webp');">
+					<div class="item-text">Oil & Masala</div>
+				</div>
+				<div class="item"
+					style="background-image: url('https://assets.rebelmouse.io/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpbWFnZSI6Imh0dHBzOi8vYXNzZXRzLnJibC5tcy8xMDY5MDM5OS9vcmlnaW4uanBnIiwiZXhwaXJlc19hdCI6MTY5Njg3MDc3OH0.dMvPqNnOv5KP-NgxW4B-GS11tRetKWgdFbPMk6KJwVg/img.jpg?width=980');">
+					<div class="item-text">Snacks & Munchies</div>
+				</div>
+			</div>
+		</section>
 
 
-    </main>
+		<section class="testimonials">
+			<h2>What Our Customers Say</h2>
+			<div class="testimonial-container">
+				<div class="testimonial">
+					<div class="testimonial-avatar">
+						<img
+							src="https://png.pngtree.com/png-clipart/20230112/original/pngtree-original-hand-painted-cute-cartoon-handsome-boy-avatar-line-draft-impasto-png-image_8905045.png"
+							alt="Ramesh's Avatar" />
+					</div>
+					<p class="testimonial-text">"Apni Dukkan has made grocery
+						shopping so easy for me. I love the variety and the quick
+						delivery!"</p>
+					<p class="testimonial-author">- Ramesh, Mumbai</p>
+				</div>
+				<div class="testimonial">
+					<div class="testimonial-avatar">
+						<img
+							src="https://thumbs.dreamstime.com/b/young-woman-avatar-cartoon-character-profile-picture-young-woman-wearing-blue-t-shirt-bandana-avatar-cartoon-character-149732053.jpg"
+							alt="Sunita's Avatar" />
+					</div>
+					<p class="testimonial-text">"Amazing service! I always find
+						what I need at Apni Dukkan."</p>
+					<p class="testimonial-author">- Sunita, Delhi</p>
+				</div>
+			</div>
+		</section>
 
-    <footer>
-        <div class="footer-container">
-            <span>&copy; 2024 Apni Dukkan. All rights reserved.</span>
-            <div class="social-media">
-                <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-            </div>
-        </div>
-    </footer>
+
+	</main>
+
+	<footer>
+		<div class="footer-container">
+			<span>&copy; 2024 Apni Dukkan. All rights reserved.</span>
+			<div class="social-media">
+				<a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+				<a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+				<a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+			</div>
+		</div>
+	</footer>
 </body>
 </html>

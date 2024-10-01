@@ -12,6 +12,7 @@
 		<input type="password" class="password" placeholder="password" th:field="*{password}" required>
 		<div th:if="${errorMessage}" th:text="${errorMessage}" style="color:red;"></div>
 		<button type="submit">Login</button>
+		<a th:href="@{/forget-password}">Forget Password</a>
 		<a th:href="@{/register}">New User? Register</a>
 	</form>
 </body>
