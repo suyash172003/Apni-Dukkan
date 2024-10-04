@@ -4,6 +4,7 @@
     <meta charset="ISO-8859-1">
     <title>Apni Dukkan - Orders</title>
     <link rel="stylesheet" href="/css/cart.css">
+    <link rel="stylesheet" href="/css/variable.css">
 </head>
 <body>
     <header>
@@ -52,8 +53,7 @@
                     </tr>
                 </tbody>
             </table>
-
-            <!-- Total Sum -->
+            
             <div class="total">
                 <strong>Total Sum:</strong>
                 <p class="total-amount" th:text="'Rs. ' + ${totalSum}"></p>
@@ -64,8 +64,9 @@
             <h4>Cancellation Policy</h4>
             <p>Orders cannot be cancelled once packed for delivery. In case of unexpected delays, a refund will be provided, if applicable.</p>
         </div>
-        
-        <button type="submit" class="payment-button">Proceed to Payment</button>
+        <a th:href="@{/payment}">
+        	<button type="submit" class="payment-button">Proceed to Payment</button>
+        </a>
     </main>
 </body>
 </html>

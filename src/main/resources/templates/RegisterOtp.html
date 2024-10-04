@@ -6,11 +6,10 @@
 <link href="/css/login.css" rel="stylesheet"></link>
 </head>
 <body>
-	<form th:action="@{/verify-otp}" th:method="post" th:object="${otp}">
+	<form th:action="@{/register/verify-otp}" th:method="post" th:object="${otp}">
 		<span>Enter OTP to Verify</span>
 		<input type="text" class="email" name="Eotp" placeholder="Enter otp to verify" required>
 		<input type="hidden" th:field="*{Gotp}" />
-		<div th:if="${message}" th:text="${message}" style="color: red;"></div>
 		<button type="submit">Verify</button>
 	</form>
 </body>

@@ -9,13 +9,16 @@ import jakarta.persistence.Id;
 public class Register {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private long id;
+	private Long id;
 	private String firstName;
 	private String lastName;
 	private String mobileNumber;
 	private String email;
 	private String password;
-	public Register(long id, String firstName, String lastName, String mobileNumber, String email, String password) {
+	
+	public Register() {}
+	
+	public Register(Long id, String firstName, String lastName, String mobileNumber, String email, String password) {
 		super();
 		this.id = id;
 		this.firstName = firstName;
@@ -24,12 +27,10 @@ public class Register {
 		this.email = email;
 		this.password = password;
 	}
-	
-	public Register() {}
-	public long getId() {
+	public Long getId() {
 		return id;
 	}
-	public void setId(long id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 	public String getFirstName() {
@@ -62,5 +63,4 @@ public class Register {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	
 }

@@ -6,9 +6,11 @@
 <link th:href="@{/css/login.css}" rel="stylesheet"></link>
 </head>
 <body>
-	<form th:action="@{/forget-password}" th:method="post">
+	<form th:action="@{/forget-password}" th:method="post" th:object="${formEmail}">
 		<span>Enter Email Id</span>
-		<input type="text" class="email" placeholder="email" required>
+		<input type="text" class="email" placeholder="email" th:field="*{email}" required>
+		<div th:if="${errorMessage}" th:text="${errorMessage}" style="color: red;"></div>
+		<div th:if="${message}" th:text="${message}" style="color: red;"></div>
 		<button type="submit">Send-OTP</button>
 	</form>
 </body>
