@@ -38,6 +38,7 @@
                         <th>Order Name</th>
                         <th>Quantity</th>
                         <th>Price</th>
+                        <th>Action</th>
                     </tr>
                 </thead>
                 <tbody th:each="item : ${cart}">
@@ -50,7 +51,13 @@
                         </td>
                         <td th:text="${item.quantity}"></td>
                         <td th:text="'Rs. ' + ${item.price}"></td>
-                    </tr>
+						<td>
+					    <form th:action="@{/delete}" method="post" th:object="${delete}">
+					        <input type="hidden" name="orderId" th:value="${item.orderId}" />
+					        <button type="submit">Delete</button>
+					    </form>
+						</td>
+				      </tr>
                 </tbody>
             </table>
             
@@ -64,9 +71,18 @@
             <h4>Cancellation Policy</h4>
             <p>Orders cannot be cancelled once packed for delivery. In case of unexpected delays, a refund will be provided, if applicable.</p>
         </div>
-        <a th:href="@{/payment}">
+     
+      <form th:action="@{/payment}" th:method="post" th:object="${order}">
+        	<input type="hidden" th:field="*{total}"></input>
+        	<input type="hidden" th:field="*{currency}"></input>
+        	<input type="hidden" th:field="*{method}"></input>
+        	<input type="hidden" th:field="*{intent}"></input>
+        	<input type="hidden" th:field="*{description}"></input>
+        	<input type="hidden" th:field="*{successUrl}"></input>
+        	<input type="hidden" th:field="*{cancelUrl}"></input>
         	<button type="submit" class="payment-button">Proceed to Payment</button>
-        </a>
-    </main>
+        </form>
+        </main>
+        
 </body>
 </html>

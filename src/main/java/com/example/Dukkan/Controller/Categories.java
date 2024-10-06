@@ -9,12 +9,14 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import com.example.Dukkan.Model.Cart;
+import com.example.Dukkan.Model.Order;
 import com.example.Dukkan.Model.Register;
 import com.example.Dukkan.Repository.CartRepository;
 import com.example.Dukkan.Repository.RegisterRepository;
 
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
+import jakarta.transaction.Transactional;
 
 @Controller
 public class Categories {
@@ -40,6 +42,7 @@ public class Categories {
 	public String categoryPost(@ModelAttribute("cart")Cart cart,HttpServletRequest request) {
 		System.out.println(cart.getUserId());
 		System.out.println(cart.getOrdername());
+		System.out.println(cart.getOrderId());
 		if(cart!=null)
 		cartOrder.save(cart);
 		String path=request.getRequestURI().substring(1);
@@ -51,16 +54,34 @@ public class Categories {
 		Long userId = (Long) session.getAttribute("userId");
 		List<Cart> temp=cartOrder.findByUserId(userId);
 		model.addAttribute("cart", temp);
-		int totalSum=0;
+		Double totalSum=(double) 0;
 		for(Cart value:temp) {
 			totalSum+=value.getPrice();
 		}
 		model.addAttribute("totalSum",totalSum);
+		Order order=new Order();
+		order.setCurrency("CAD");
+		order.setMethod("paypal");
+		order.setSuccessUrl("http://localhost:8081/paymentSuccess");
+		order.setCancelUrl("http://localhost:8081/paymentFailed");
+		order.setIntent("sale");
+		order.setTotal(totalSum);
+		model.addAttribute("order",order);
+		model.addAttribute("delete",new Cart());
 		return "Cart";
 	}
 	
 	@GetMapping({"/login/orders","/orders"})
-	public String orders() {
+	public String orders(Model model,Cart cart) {
 		return "Orders";
+	}
+	
+	@Transactional
+	@PostMapping("/delete")
+	public String deleteElements(@ModelAttribute("delete")Cart delete) {
+		Long deleteId=delete.getOrderId();
+		System.out.println("orderId"+" "+deleteId);
+		cartOrder.deleteByOrderId(deleteId);
+		return "redirect:/cart";
 	}
 }
