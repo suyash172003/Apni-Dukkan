@@ -53,7 +53,7 @@ public class Categories {
 	public String cart(Model model,HttpSession session) {
 		Long userId = (Long) session.getAttribute("userId");
 		List<Cart> temp=cartOrder.findByUserId(userId);
-		model.addAttribute("cart", temp);
+		model.addAttribute("temp", temp);
 		Double totalSum=(double) 0;
 		for(Cart value:temp) {
 			totalSum+=value.getPrice();
@@ -79,9 +79,10 @@ public class Categories {
 	@Transactional
 	@PostMapping("/delete")
 	public String deleteElements(@ModelAttribute("delete")Cart delete) {
-		Long deleteId=delete.getOrderId();
-		System.out.println("orderId"+" "+deleteId);
-		cartOrder.deleteByOrderId(deleteId);
+		Long orderId=delete.getOrderId();
+		Long userId=delete.getUserId();
+		System.out.println("orderId"+" "+orderId+" "+userId);
+		cartOrder.deleteByUserIdAndOrderId(userId,orderId);
 		return "redirect:/cart";
 	}
 }

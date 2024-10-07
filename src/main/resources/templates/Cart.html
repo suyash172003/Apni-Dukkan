@@ -41,7 +41,7 @@
                         <th>Action</th>
                     </tr>
                 </thead>
-                <tbody th:each="item : ${cart}">
+                <tbody th:each="item : ${temp}">
                     <tr>
                         <td>
                             <div class="order-item">
@@ -54,6 +54,7 @@
 						<td>
 					    <form th:action="@{/delete}" method="post" th:object="${delete}">
 					        <input type="hidden" name="orderId" th:value="${item.orderId}" />
+					        <input type="hidden" name="userId" th:value="${item.userId}" />
 					        <button type="submit">Delete</button>
 					    </form>
 						</td>
