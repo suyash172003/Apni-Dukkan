@@ -45,5 +45,5 @@
 1. **Clone the repository**:
 
    ```bash
-   git clone https://github.com/your-username/apni-dukan.git
+   [git clone https://github.com/suyash172003/apni-dukan.git](https://github.com/suyash172003/Apni-Dukkan.git)
    cd apni-dukan
