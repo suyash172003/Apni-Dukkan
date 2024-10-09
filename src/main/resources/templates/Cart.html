@@ -9,25 +9,26 @@
 <body>
     <header>
         <nav>
-            <div class="nav-container">
-                <div class="logo">Apni Dukkan</div>
-                <ul class="nav-links">
-                    <li><a th:href="@{/home}">Home</a></li>
-                    <li class="dropdown">
-                        <a href="#" class="dropbtn">Categories</a>
-                        <div class="dropdown-content">
-                            <a th:href="@{/category1}">Bread & Milk</a>
-                            <a th:href="@{/category2}">Atta, Rice & Daal</a>
-                            <a th:href="@{/category3}">Oil & Masala</a>
-                            <a th:href="@{/category4}">Snacks & Munchies</a>
-                        </div>
-                    </li>
-                    <li><a th:href="@{/cart}">Cart</a></li>
-                    <li><a th:href="@{/orders}">Orders</a></li>
-                    <li><a th:href="@{/logout}">Logout</a></li>
-                </ul>
+     <div class="nav-container">
+            <div class="logo">Apni Dukkan</div>
+            <ul class="nav-links">
+                <li><a th:href="@{/home}" aria-label="Home">Home</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn" aria-label="Categories">Categories</a>
+                    <div class="dropdown-content">
+                        <a th:href="@{/category1}" aria-label="Bread and Milk">Bread & Milk</a>
+                        <a th:href="@{/category2}" aria-label="Atta, Rice, and Daal">Atta, Rice & Daal</a>
+                        <a th:href="@{/category3}" aria-label="Oil and Masala">Oil & Masala</a>
+                        <a th:href="@{/category4}" aria-label="Snacks and Munchies">Snacks & Munchies</a>
+                    </div>
+                </li>
+                <li><a th:href="@{/cart}" aria-label="Cart">Cart</a></li>
+                <li><a th:href="@{/orders}" aria-label="Orders">Orders</a></li>
+                <li><a th:href="@{/logout}" aria-label="Logout" onclick="return confirm('Are you sure you want to logout?');">Logout</a></li>
+            </ul>
             </div>
-        </nav>
+</nav>
+
     </header>
 
     <main class="container">
@@ -53,9 +54,10 @@
                         <td th:text="'Rs. ' + ${item.price}"></td>
 						<td>
 					    <form th:action="@{/delete}" method="post" th:object="${delete}">
+					    	
 					        <input type="hidden" name="orderId" th:value="${item.orderId}" />
 					        <input type="hidden" name="userId" th:value="${item.userId}" />
-					        <button type="submit">Delete</button>
+					        <button type="submit" ><img src="../images/trash.svg"></img></button>
 					    </form>
 						</td>
 				      </tr>

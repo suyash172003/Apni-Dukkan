@@ -23,7 +23,7 @@ import jakarta.servlet.http.HttpSession;
 
 @Controller
 @SessionAttributes("formEmail")
-public class LoginService {
+public class LoginController {
 	
 	@Autowired
 	LoginRepository logging;
@@ -39,23 +39,18 @@ public class LoginService {
 	@GetMapping("/login")
 	public String loginUser(Model model) {
 		model.addAttribute("login",new Login());
-		return "login";
-	}
-	
-	@GetMapping("/home")
-	public String home() {
-		return "home";
+		return "Login";
 	}
 	
 	@PostMapping("/login")
-	public String loginUser(Login login,RedirectAttributes redirectAttribute,HttpSession session) {
+	public String loginUser(@ModelAttribute("login") Login login,RedirectAttributes redirectAttribute,HttpSession session) {
 		if(registering.existsByEmail(login.getEmail())) {
 			if(login.getPassword().equals(registering.findByEmail(login.getEmail()).getPassword())) {
 				session.setAttribute("email", login.getEmail());
 				Register register=registering.findByEmail((String)session.getAttribute("email"));
 				session.setAttribute("userId",register.getId().longValue());
 				logging.save(login);
-				return "redirect:/home";
+				return "Home";
 			}
 		}
 		redirectAttribute.addFlashAttribute("errorMessage", "Invalid Credentials");
@@ -80,7 +75,7 @@ public class LoginService {
 			otp.setGotp(String.valueOf(val));
 			emailGenerate.sendEmailTo(formEmail.getEmail(),"From APNI DUKKAN", "Your otp:"+String.valueOf(val));
 			model.addAttribute("otp",otp);
-			return "otpPage";
+			return "OtpPage";
 		}
 	}
 	
@@ -110,9 +105,10 @@ public class LoginService {
 	
 	
 	@GetMapping("/logout")
-	public String logoutUser(Model model,HttpSession session) {
+	public String logoutUser(Model model,HttpSession session,Login login) {
 		session.invalidate();
-		return "redirect:/home";
+		model.addAttribute("login", null);
+		return "Home";
 	}
 	
 }

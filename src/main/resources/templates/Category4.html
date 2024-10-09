@@ -10,28 +10,26 @@
 
 <body>
     <nav>
-    <div class="nav-container">
-        <div class="logo">Apni Dukkan</div>
-        <ul class="nav-links">
-            <li><a th:href="@{/home}">Home</a></li>
-            
-            <!-- Dropdown for Categories -->
-            <li class="dropdown">
-                <a href="#" class="dropbtn">Categories</a>
-                <div class="dropdown-content">
-                     <a th:href="@{/category1}">Bread & Milk</a>
-                    <a th:href="@{/category2}">Atta, Rice & Daal</a>
-                    <a th:href="@{/category3}">Oil & Masala</a>
-                    <a th:href="@{/category4}">Snacks & Munchies</a>
-                </div>
-            </li>
-
-            <li><a th:href="@{/cart}">Cart</a></li>
-            <li><a th:href="@{/orders}">Orders</a></li>
-            <li><a th:href="@{/logout}">Logout</a></li>
-        </ul>
-    </div>
+     <div class="nav-container">
+            <div class="logo">Apni Dukkan</div>
+            <ul class="nav-links">
+                <li><a th:href="@{/home}" aria-label="Home">Home</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn" aria-label="Categories">Categories</a>
+                    <div class="dropdown-content">
+                        <a th:href="@{/category1}" aria-label="Bread and Milk">Bread & Milk</a>
+                        <a th:href="@{/category2}" aria-label="Atta, Rice, and Daal">Atta, Rice & Daal</a>
+                        <a th:href="@{/category3}" aria-label="Oil and Masala">Oil & Masala</a>
+                        <a th:href="@{/category4}" aria-label="Snacks and Munchies">Snacks & Munchies</a>
+                    </div>
+                </li>
+                <li><a th:href="@{/cart}" aria-label="Cart">Cart</a></li>
+                <li><a th:href="@{/orders}" aria-label="Orders">Orders</a></li>
+                <li><a th:href="@{/logout}" aria-label="Logout" onclick="return confirm('Are you sure you want to logout?');">Logout</a></li>
+            </ul>
+            </div>
 </nav>
+
 
     <section class="products" th:object=${cart}>
         <div class="category">
@@ -47,6 +45,7 @@
     					<input type="hidden" name="price" value="10">
     					<input type="hidden" name="quantity" value="10g">
     					<input type="hidden" name="userId" th:field="*{userId}">
+    					<input type="hidden" name="orderId" value="30">
                         <input type="hidden" name="image" value="https://m.media-amazon.com/images/I/71BrSCM1iFL._SL1500_.jpg">
                     	<button class="btn">Add</button>
                     </form>
@@ -61,6 +60,7 @@
     					<input type="hidden" name="price" value="10">
     					<input type="hidden" name="quantity" value="10g">
     					<input type="hidden" name="userId" th:field="*{userId}">
+    					<input type="hidden" name="orderId" value="31">
                         <input type="hidden" name="image" value="https://gumlet-images.assettype.com/afaqs/2023-10/cb9eed37-a5c0-4996-b28e-f1717efaa741/Gandhi_the_original_D2C_Brand__6_.png?w=1200&auto=format%2Ccompress&ogImage=true">
                     	<button class="btn">Add</button>
                     </form>
@@ -75,6 +75,7 @@
     					<input type="hidden" name="price" value="10">
     					<input type="hidden" name="quantity" value="10g">
     					<input type="hidden" name="userId" th:field="*{userId}">
+    					<input type="hidden" name="orderId" value="32">
                         <input type="hidden" name="image" value="https://5.imimg.com/data5/SELLER/Default/2023/12/368288132/TG/XE/GZ/135934286/crax-rings-tangy-tomato-500x500.jpg">
                     	<button class="btn">Add</button>
                     </form>
@@ -89,6 +90,7 @@
     					<input type="hidden" name="price" value="10">
     					<input type="hidden" name="quantity" value="10g">
     					<input type="hidden" name="userId" th:field="*{userId}">
+    					<input type="hidden" name="orderId" value="33">
                         <input type="hidden" name="image" value="http://rukmini1.flixcart.com/image/300/300/xif0q/chips/a/8/3/82-natkhat-classic-1-crax-original-imagr7azgkf9uf4n.jpeg">
                     	<button class="btn">Add</button>
                     </form>
@@ -109,6 +111,7 @@
     					<input type="hidden" name="price" value="40">
     					<input type="hidden" name="quantity" value="250g">
     					<input type="hidden" name="userId" th:field="*{userId}">
+    					<input type="hidden" name="orderId" value="34">
                         <input type="hidden" name="image" value="https://parulfoodproduct.com/images/namkeen/namkeen-rs-10/aloo_bhujiya.jpg">
 	                    <button class="btn">Add</button>
                     </form>
@@ -124,6 +127,7 @@
     					<input type="hidden" name="price" value="40">
     					<input type="hidden" name="quantity" value="250g">
     					<input type="hidden" name="userId" th:field="*{userId}">
+    					<input type="hidden" name="orderId" value="35">
                         <input type="hidden" name="image" value="https://parulfoodproduct.com/images/namkeen/namkeen-rs-5/panjabi_tadka.jpg">
 	                    <button class="btn">Add</button>
                     </form>
@@ -139,6 +143,7 @@
     					<input type="hidden" name="price" value="40">
     					<input type="hidden" name="quantity" value="250g">
     					<input type="hidden" name="userId" th:field="*{userId}">
+    					<input type="hidden" name="orderId" value="36">
                         <input type="hidden" name="image" value="https://parulfoodproduct.com/images/namkeen/namkeen-rs-5/Chana_dal.jpg">
 	                    <button class="btn">Add</button>
                     </form>
@@ -154,6 +159,7 @@
     					<input type="hidden" name="price" value="40">
     					<input type="hidden" name="quantity" value="250g">
     					<input type="hidden" name="userId" th:field="*{userId}">
+    					<input type="hidden" name="orderId" value="37">
                         <input type="hidden" name="image" value="https://parulfoodproduct.com/images/namkeen/namkeen-rs-5/diet_chiwda.jpg">
 	                    <button class="btn">Add</button>
                     </form>

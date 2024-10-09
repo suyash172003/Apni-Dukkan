@@ -32,7 +32,7 @@ public class RegisterService {
 	@GetMapping("/register")
 	public String registerUser(Model model) {
 		model.addAttribute("register", new Register());
-		return "register";
+		return "Register";
 	}
 	
 	@PostMapping("/register")

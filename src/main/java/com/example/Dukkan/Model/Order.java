@@ -62,6 +62,6 @@ public class Order {
 		this.cancelUrl = cancelUrl;
 		this.successUrl = successUrl;
 	}
-	public Order() {}
-
+	public Order() {
+	}
 }

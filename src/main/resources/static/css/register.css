@@ -1,6 +1,6 @@
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #e9ecef;
+    font-family: var(--font-family);
+    background-color: var(--background-color);
     margin: 0;
     padding: 0;
     display: flex;
@@ -12,8 +12,8 @@ body {
 form {
     background: white;
     padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 20px var(--shadow-color);
     width: 400px;
     text-align: center;
 }
@@ -23,7 +23,7 @@ span {
     font-size: 28px;
     font-weight: bold;
     margin-bottom: 20px;
-    color: #333;
+    color: var(--text-color);
 }
 
 input[type="text"],
@@ -36,16 +36,23 @@ input[type="password"] {
     border: 1px solid #ccc;
     border-radius: 5px;
     box-sizing: border-box;
+    transition: border-color var(--transition-speed);
+}
+
+input:focus {
+    border-color: var(--primary-color);
+    outline: none;
 }
 
 button {
     width: 100%;
     padding: 12px;
-    background-color: #007BFF;
+    background-color: var(--primary-color);
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: var(--border-radius);
     cursor: pointer;
+    transition: background-color var(--transition-speed);
 }
 
 button:hover {
@@ -56,7 +63,8 @@ a {
     display: block;
     margin-top: 15px;
     text-decoration: none;
-    color: #007BFF;
+    color: var(--link-color);
+    transition: color var(--transition-speed);
 }
 
 a:hover {
