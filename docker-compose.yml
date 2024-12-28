@@ -1,0 +1,35 @@
+version: "3.9"
+services:
+  app:
+    build:
+      context: .
+    environment:
+      MYSQL_URL: jdbc:mysql://database:3306/dukkan?createDatabaseIfNotExists=true
+      MYSQL_USERNAME: root
+      MYSQL_PASSWORD: root
+    ports:
+      - '8081:8081'
+    depends_on:
+      database:
+        condition: service_healthy
+    networks:
+      - app-network
+
+  database:
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: dukkan
+    ports:
+      - '3307:3306'
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-proot"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
