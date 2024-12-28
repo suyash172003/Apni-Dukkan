@@ -1,0 +1,30 @@
+version: "3"
+services:
+  database:
+    image: mysql:8.0
+    container_name: database
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: dukkan
+    ports:
+      - '3307:3306'
+    networks:
+      - app-network
+
+  app:
+    build: .
+    container_name: apni-dukkan
+    depends_on:
+      - database
+    environment:
+      MYSQL_URL: jdbc:mysql://database:3306/dukkan
+      MYSQL_USERNAME: root
+      MYSQL_PASSWORD: root
+    ports:
+      - '8081:8081'
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
