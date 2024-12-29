@@ -1,24 +1,26 @@
-pipeline{
+pipeline {
     agent any
-    stages{
-        stage("environment"){
-            steps{
-                script{
+    stages {
+        stage("Environment Setup") {
+            steps {
+                script {
                     sh '''
-                    apt-get update
-                    apt install java
+                    set -e
+                    sudo apt-get update
+                    sudo apt-get install -y openjdk-11-jdk
                     '''
                 }
             }
         }
-        stage("build"){
-            steps{
-               script{
-                  sh '''
-                     mvn clean
-                     mvn package
-                     '''
-               }
+        stage("Build Project") {
+            steps {
+                script {
+                    sh '''
+                    set -e
+                    mvn clean
+                    mvn package
+                    '''
+                }
             }
         }
     }
