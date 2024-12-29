@@ -4,8 +4,7 @@ pipeline {
         stage("Build Project") {
             steps {
                 sh '''
-                mvn clean
-                mvn package
+                docker-compose up
                 '''
             }
         }
