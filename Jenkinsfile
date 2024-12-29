@@ -1,26 +1,16 @@
 pipeline {
-    agent any
-    stages {
-        stage("Environment Setup") {
-            steps {
-                script {
-                    sh '''
-                    set -e
-                    sudo apt-get update
-                    sudo apt-get install -y openjdk-11-jdk
-                    '''
-                }
-            }
+    agent {
+        docker {
+            image 'maven:3.8.4-openjdk-11'
         }
+    }
+    stages {
         stage("Build Project") {
             steps {
-                script {
-                    sh '''
-                    set -e
-                    mvn clean
-                    mvn package
-                    '''
-                }
+                sh '''
+                mvn clean
+                mvn package
+                '''
             }
         }
     }
