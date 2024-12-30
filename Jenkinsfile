@@ -9,5 +9,13 @@ pipeline {
                 '''
             }
         }
+
+        stage("Create image of Project") {
+           steps {
+              sh '''
+              docker-compose up
+              '''
+            }
+        }
      }
 }
