@@ -10,10 +10,11 @@ pipeline {
             }
         }
 
-        stage("Create image of Project") {
+        stage("Create Image and Build") {
            steps {
               sh '''
-              docker-compose up --build
+              docker build -t suyash172003/apni-dukkan-app .
+              docker push suyash172003/apni-dukkan-app
               '''
             }
         }
