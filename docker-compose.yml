@@ -1,8 +1,7 @@
 version: "3.9"
 services:
   app:
-    build:
-      context: .
+    image: suyash172003/apni-dukkan-app:latest
     environment:
       MYSQL_URL: jdbc:mysql://database:3306/dukkan?createDatabaseIfNotExists=true
       MYSQL_USERNAME: root
