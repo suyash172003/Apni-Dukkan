@@ -13,7 +13,7 @@ pipeline {
         stage("Create image of Project") {
            steps {
               sh '''
-              docker-compose up
+              docker-compose up --build
               '''
             }
         }
