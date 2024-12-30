@@ -4,9 +4,19 @@ pipeline {
         stage("Build Project") {
             steps {
                 sh '''
-                docker-compose up
+                mvn clean
+                mvn package
                 '''
             }
         }
     }
+    stages {
+       stage("Build Docker Image") {
+           steps {
+               sh '''
+                    docker-compose up
+                 '''
+                }
+            }
+        }
 }
