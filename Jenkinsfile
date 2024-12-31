@@ -1,6 +1,13 @@
 pipeline {
     agent any
     stages {
+        stage("User"){
+            steps {
+                sh '''
+                whoami
+                '''
+            }
+        }
         stage("Build Project") {
             steps {
                 sh '''
