@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: apni-dukkan
+  labels:
+    app: apni-dukkan
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: apni-dukkan
+  template:
+    metadata:
+      labels:
+        app: apni-dukkan
+    spec:
+      containers:
+        - name: apni-dukkan
+          image: suyash172003/apni-dukkan-app:latest
+          ports:
+            - containerPort: 80
+          env:
+            - name: MYSQL_URL
+              value: jdbc:mysql://mysql-service:3306/dukkan
+            - name: MYSQL_USERNAME
+              value: root
+            - name: MYSQL_PASSWORD
+              value: root
