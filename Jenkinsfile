@@ -20,8 +20,8 @@ pipeline {
         stage("Create Image and Build") {
            steps {
               sh '''
-              docker build -t suyash172003/apni-dukkan-app:latest .
-              docker push suyash172003/apni-dukkan-app:latest
+              docker build -t suyash172003/apni-dukkan-app:${BUILD_NUMBER} .
+              docker push suyash172003/apni-dukkan-app:${BUILD_NUMBER}
               '''
             }
         }
