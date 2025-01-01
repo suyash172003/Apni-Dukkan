@@ -46,7 +46,7 @@ pipeline {
 
                     # Commit and push the change
                     git add .
-                    git commit -m "Change image tag to ${BUILD_IMAGE_TAG}"
+                    git commit -m "Change in image of deployment"
                     git push https://${GITHUB_TOKEN}@github.com/${GIT_USER_NAME}/${GIT_REPO_NAME} HEAD:main
                     '''
                 }
