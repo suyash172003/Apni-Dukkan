@@ -17,6 +17,7 @@ spec:
       containers:
         - name: apni-dukkan
           image: suyash172003/apni-dukkan-app:latest
+          imagePullPolicy: Always
           ports:
             - containerPort: 80
           env:
@@ -26,3 +27,4 @@ spec:
               value: root
             - name: MYSQL_PASSWORD
               value: root
+      restartPolicy: Always
