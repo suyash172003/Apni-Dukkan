@@ -12,6 +12,7 @@ pipeline {
             steps {
                 sh '''
                 whoami
+                sudo ls -l /var/run/docker.sock
                 '''
             }
         }
