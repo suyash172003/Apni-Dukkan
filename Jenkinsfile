@@ -42,7 +42,7 @@ pipeline {
                     git config user.name "${GIT_USER_NAME}"
 
                     # Update the Kubernetes deployment file with the build number
-                    sed -i "s/latest/${BUILD_IMAGE_TAG}/g" K8/app/app_deployment.yml
+                    sed -i "s/latest/${BUILD_IMAGE_TAG}/g" K8/manifests/app_deployment.yml
 
                     # Commit and push the change
                     git add .
