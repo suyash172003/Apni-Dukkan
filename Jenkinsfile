@@ -13,6 +13,7 @@ pipeline {
                 sh '''
                 whoami
                 sudo usermod -aG docker jenkins
+                sudo chown root:docker jenkins
                 sudo ls -l /var/run/docker.sock
                 '''
             }
