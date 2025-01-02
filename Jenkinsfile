@@ -48,7 +48,7 @@ pipeline {
 
                     # Commit and push the change
                     git add .
-                    git commit -m "Change deployment image"
+                    git commit -m "Change in deployment image"
                     git push https://${GITHUB_TOKEN}@github.com/${GIT_USER_NAME}/${GIT_REPO_NAME} HEAD:main
                     '''
                 }
