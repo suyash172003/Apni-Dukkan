@@ -12,6 +12,7 @@ pipeline {
             steps {
                 sh '''
                 whoami
+                sudo usermod -aG docker jenkins
                 sudo ls -l /var/run/docker.sock
                 '''
             }
