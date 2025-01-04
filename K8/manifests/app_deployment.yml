@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
         - name: apni-dukkan
-          image: suyash172003/apni-dukkan-app
+          image: suyash172003/apni-dukkan-app:v0.1.76
           imagePullPolicy: Always
           ports:
             - containerPort: 80
