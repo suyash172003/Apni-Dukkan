@@ -6,7 +6,7 @@ metadata:
     app: apni-dukkan
   annotations:
     argocd-image-updater.argoproj.io/image-list: suyash172003/apni-dukkan-app:v0.1.x
-    argocd-image-updater.argoproj.io/apni-dukkan-app.update-strategy: semver
+    argocd-image-updater.argoproj.io/apni-dukkan.update-strategy: semver
 spec:
   replicas: 3
   selector:
