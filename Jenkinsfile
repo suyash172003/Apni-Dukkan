@@ -30,8 +30,8 @@ pipeline {
         stage("Create Image and Build") {
             steps {
                 sh '''
-                docker build -t suyash172003/apni-dukkan-app:${BUILD_IMAGE_TAG} .
-                docker push suyash172003/apni-dukkan-app:${BUILD_IMAGE_TAG}
+                docker build -t suyash172003/apni-dukkan-app:v0.1.${BUILD_IMAGE_TAG} .
+                docker push suyash172003/apni-dukkan-app:v0.1.${BUILD_IMAGE_TAG}
                 '''
             }
         }
