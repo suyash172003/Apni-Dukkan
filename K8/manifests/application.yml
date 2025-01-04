@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: apni-dukkan
+  namespace: argocd
+  annotations:
+    argocd-image-updater.argoproj.io/image-list: suyash172003/apni-dukkan-app:v0.1.x
+    argocd-image-updater.argoproj.io/apni-dukkan-app.update-strategy: semver
+spec:
+  destination:
+    namespace: default
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    repoURL: https://github.com/suyash172003/Apni-Dukkan.git
+    path: K8/manifests
+    targetRevision: HEAD
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
