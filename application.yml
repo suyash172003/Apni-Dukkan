@@ -3,9 +3,6 @@ kind: Application
 metadata:
   name: apni-dukkan
   namespace: argocd
-  annotations:
-    argocd-image-updater.argoproj.io/image-list: suyash172003/apni-dukkan-app:v0.1.x
-    argocd-image-updater.argoproj.io/apni-dukkan-app.update-strategy: semver
 spec:
   destination:
     namespace: default
@@ -19,3 +16,6 @@ spec:
     automated:
       prune: true
       selfHeal: true
+  annotations:
+    argocd-image-updater.argoproj.io/image-list: suyash172003/apni-dukkan-app:v0.1.x
+    argocd-image-updater.argoproj.io/apni-dukkan-app.update-strategy: semver
