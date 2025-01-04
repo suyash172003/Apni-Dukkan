@@ -4,6 +4,9 @@ metadata:
   name: apni-dukkan
   labels:
     app: apni-dukkan
+  annotations:
+    argocd-image-updater.argoproj.io/image-list: suyash172003/apni-dukkan
+    argocd-image-updater.argoproj.io/my-container.update-strategy: latest
 spec:
   replicas: 3
   selector:
@@ -16,7 +19,7 @@ spec:
     spec:
       containers:
         - name: apni-dukkan
-          image: suyash172003/apni-dukkan-app:6261605957
+          image: suyash172003/apni-dukkan-app:latest
           imagePullPolicy: Always
           ports:
             - containerPort: 80
